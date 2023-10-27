@@ -1,0 +1,98 @@
+			<!--============================头部 开始=============================-->
+		
+			<header class="header ">
+				<!-- pc导航start -->
+				<div class="layui-container">
+					<div class="layui-row">
+						<div class="layui-col-xs12">
+							<div class="content">
+								<a href="index.html" class="logo">
+									<img src="{pboot:sitelogo}" alt="logo">
+								</a>
+								<div class="right fr">
+
+									<nav class="nav">
+										<ul>
+											<li class="nav_item  {pboot:if(0=='{sort:scode}')}on{/pboot:if}">
+												<a href="/" class="name">首页</a>
+											</li>
+											
+											{pboot:nav num=20 parent=0}
+											<li
+												class="nav_item   nav_li 
+{pboot:if('[nav:scode]'=='{sort:tcode}')}on{/pboot:if}">
+												<a href="[nav:link]" class="name">[nav:name]</a>
+												{pboot:if([nav:soncount]>0)}
+												<ul class="rd-menu rd-navbar-dropdown">
+													{pboot:2nav num=20 parent=[nav:scode]}
+													<li class="rd-dropdown-item">
+														<a href="[2nav:link]">[2nav:name]</a>
+													</li>
+													{/pboot:2nav}
+													
+												</ul>
+												{/pboot:if}
+											</li>
+											{/pboot:nav}
+											
+											
+										</ul>
+									</nav>
+
+									<dl>
+										<dd>
+											<a>
+												<div class="con">{pboot:companymobile}</div>
+												<img src="{pboot:sitetplpath}/template/default/images/header_icon01.png" alt="">
+											</a>
+										</dd>
+										<dd>
+											<a class="btn" name="t3">
+												<img src="{pboot:sitetplpath}/template/default/images/header_icon02.png" alt="">
+											</a>
+										</dd>
+									</dl>
+
+									<button class="rd-navbar-toggle toggle-original"
+										data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- pc导航end -->
+			</header>
+			<!-- wap导航start -->
+			<div class="rd-navbar-main-element">
+				<div class="rd-navbar-nav-wrap toggle-original-elements">
+					<ul class="rd-navbar-nav">
+						<li class="rd-nav-item rd-navbar--has-dropdown rd-navbar-submenu"><a class="rd-nav-link"
+								href="/">首页</a>
+						</li>
+						
+						{pboot:nav num=20 parent=0}
+						<li
+							class="rd-nav-item rd-navbar--has-dropdown rd-navbar-submenu ">
+							<a class="rd-nav-link" href="[nav:link]">[nav:name]</a>
+							<span class="rd-navbar-submenu-toggle"></span>
+								{pboot:if([nav:soncount]>0)}
+							<ul class="rd-menu rd-navbar-dropdown rd-navbar-open-right" style="">
+									{pboot:2nav num=20 parent=[nav:scode]}
+								<li
+									class="rd-dropdown-item ">
+									<a class="rd-dropdown-link" href="[2nav:link]">[2nav:name]</a>
+								</li>
+								
+								{/pboot:2nav}
+								
+							</ul>
+									{/pboot:if}
+						</li>
+							{/pboot:nav}
+
+					</ul>
+				</div>
+			</div>
+			<!-- wap导航end -->
+			<!--============================头部 结束=============================-->

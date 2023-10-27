@@ -1,0 +1,74 @@
+<!doctype html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<title>{sort:name}-{pboot:sitesubtitle}</title>
+		
+		{include file = header.html}
+	</head>
+
+	<body>
+
+		<div class="a_body" id="miso_scroll">
+			{include file = headNav.html}
+{include file=pcPageBanner.html}
+
+
+
+<div class="clear"></div>
+<!--============================主体 开始=============================-->
+<section class="n_container">
+	<div class="n_product">
+		<div class="layui-container">
+			<div class="layui-row">
+				<div class="layui-col-xs12">
+					<div class="siji">
+	<ul>
+		
+{pboot:nav num=10 parent={sort:tcode}}
+		<li >
+			<a href="[nav:link]"><span>[nav:name]</span></a>
+		</li>
+		
+{/pboot:nav}
+		
+	</ul>
+</div>
+
+					<section class="container03">
+						<ul>
+							{pboot:list num=10 order=date}
+							<li>
+								<a href="[list:link]">
+									<div class="img slow">
+										<img src="[list:ico]" alt="[list:title]">
+									</div>
+									<div class="con">
+										<div class="icon">
+											<span>+</span>
+										</div>
+										<h5>[list:title]</h5>
+										<p>[list:content drophtml=1 lencn=100]</p>
+									</div>
+								</a>
+							</li>
+							
+							{/pboot:list}
+							
+							
+						</ul>
+						<div class="clear"></div>
+					</section>
+					<!-- 分页 -->
+
+	  {include file = bar.html}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--============================主体 结束=============================-->
+{include file = footer.html}

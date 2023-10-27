@@ -1,0 +1,113 @@
+<!doctype html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+				<title>{sort:name}-{pboot:sitesubtitle}</title>
+		
+		{include file = header.html}
+	</head>
+
+	<body>
+
+		<div class="a_body" id="miso_scroll">
+					{include file = headNav.html}
+
+
+{include file=pcPageBanner.html}
+
+<div class="clear"></div>
+<!--============================主体 开始=============================-->
+<section class="n_container">
+	<div class="n_product_detail">
+		<div class="fl01">
+			<div class="layui-container">
+				<div class="layui-row">
+					<div class="layui-col-xs12">
+						<div class="siji">
+	<ul>
+		
+		{pboot:nav num=10 parent={sort:tcode}}
+		<li >
+			<a href="[nav:link]"><span>[nav:name]</span></a>
+		</li>
+		
+		{/pboot:nav}
+		
+	</ul>
+</div>
+
+						<div class="content">
+							<div class="left fl">
+								<ul>
+									<li>
+										<div class="img slow">
+											<img src="{content:ico}" alt="{content:title}">
+										</div>
+									</li>
+									
+									<li>
+										<div class="img slow">
+														<img src="{content:ico}" alt="{content:title}">
+										</div>
+									</li>
+									
+								</ul>
+							</div>
+							<div class="right fr">
+								<div class="table">
+									<div class="table_cell">
+										<h3>{content:title}</h3>
+										<h4>产品概述</h4>
+										<p>
+											{content:description}
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="fl02">
+			<div class="layui-container">
+				<div class="layui-row">
+					<div class="layui-col-xs12">
+						<div class="content">
+							<h3><span>产品详情</span></h3>
+
+							<div class="ar_article">
+								{content:content}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</section>
+
+<script>
+	$('.n_product_detail .fl01 .left ul').miso({
+		autoplaySpeed: 4000,
+		autoplay: true,
+		speed: 800,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		dots: false,
+		fade: true,
+		touchThreshold: 10,
+		pauseOnHover: true,
+		focusOnSelect: true,
+		cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+	});
+</script>
+
+<!--============================主体 结束=============================-->
+{include file = footer.html}
